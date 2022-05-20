@@ -99,9 +99,12 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Compteur de cliques sur le bouton:',
-              style: TextStyle(backgroundColor: Colors.amber)),
+            const Text('Compteur de cliques sur le bouton:',
+                style: TextStyle(
+                    fontSize: 20,
+                    backgroundColor: Colors.amber,
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic)),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline1,
@@ -113,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add_box_outlined),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
