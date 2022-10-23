@@ -23,10 +23,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter layout demo",
       home: Scaffold(
-          appBar: AppBar(title: const Text("Flutter layout demo")),
-          body: Column(
-            children: [titleSection, buttonSection],
-          )),
+        appBar: AppBar(title: const Text("Flutter layout demo")),
+        body: ListView(
+          children: [titleSection, buttonSection],
+        ),
+      ),
     );
   }
 
@@ -44,7 +45,10 @@ class MyApp extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-                fontSize: 12, fontWeight: FontWeight.w400, color: color),
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
           ),
         )
       ],
@@ -53,30 +57,32 @@ class MyApp extends StatelessWidget {
 }
 
 Widget titleSection = Container(
-    padding: const EdgeInsets.all(32),
-    child: Row(
-      children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: const Text(
-                    "Oeschinen Lake Campground",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )),
-              Text(
-                "Kandersteg, Switzerland",
-                style: TextStyle(color: Colors.grey[500]),
-              )
-            ],
-          ),
+  padding: const EdgeInsets.all(32),
+  child: Row(
+    children: [
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: const Text(
+                "Oeschinen Lake Campground",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Text(
+              "Kandersteg, Switzerland",
+              style: TextStyle(color: Colors.grey[500]),
+            )
+          ],
         ),
-        Icon(
-          Icons.star,
-          color: Colors.red[500],
-        ),
-        const Text('4.1')
-      ],
-    ));
+      ),
+      Icon(
+        Icons.star,
+        color: Colors.red[500],
+      ),
+      const Text('4.1')
+    ],
+  ),
+);
